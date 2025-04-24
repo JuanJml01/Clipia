@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Header Component -->
+    <header class="header">
+        <div class="container">
+            <div class="app-title">Clipia</div>
+            <div class="user-controls">
+                <!-- Optional: Future user controls -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Component -->
+    <nav class="navigation">
+        <div class="container">
+            <div class="nav-tab active" data-target="upload-tab-content">Upload</div>
+            <div class="nav-tab" data-target="process-tab-content">Process</div>
+            <div class="nav-tab" data-target="results-tab-content">Results</div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="content">
+        <div class="container">
+            <!-- Tab Content: Upload -->
+            <section id="upload-tab-content" class="tab-content active">
+                <h2>Upload Video</h2>
+                <div class="file-input-section">
+                    <input type="file" id="video-file-input" accept="video/*">
+                    <label for="video-file-input">Drag & Drop or Click to Upload Video</label>
+                </div>
+                <div id="video-preview-area" class="video-preview">
+                    <video id="video-preview" controls></video>
+                    <div id="video-metadata" class="video-metadata">
+                        <!-- Video metadata will be displayed here -->
+                    </div>
+                </div>
+                <!-- Note: The form action is removed as upload will be handled by JavaScript -->
+                <button id="upload-video-button" class="upload-button">Upload Video</button>
+                <!-- TODO: Add loading indicator -->
+            <!-- Video Trimming Section -->
+            <div id="trim-section" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--ctp-surface1);">
+                <h2>Trim Video</h2>
+                <div>
+                    <label for="start-second">Start Second:</label>
+                    <input type="number" id="start-second" name="start-second" step="0.1" value="0" min="0">
+                </div>
+                <div style="margin-top: 10px;">
+                    <label for="end-second">End Second:</label>
+                    <input type="number" id="end-second" name="end-second" step="0.1" value="0" min="0">
+                </div>
+                <button id="trim-video-button" class="upload-button" style="margin-top: 20px;">Trim Video</button>
+                <!-- TODO: Add loading/feedback for trimming -->
+            </div>
+            </section>
+
+
+
+            <!-- Tab Content: Process -->
+            <section id="process-tab-content" class="tab-content">
+                <h2>Process Video</h2>
+                <p>Content for the Process tab goes here.</p>
+                <!-- TODO: Add video processing options -->
+            </section>
+
+            <!-- Tab Content: Results -->
+            <section id="results-tab-content" class="tab-content">
+                <h2>Processing Results</h2>
+                <p>Content for the Results tab goes here.</p>
+                <!-- TODO: Display processing results and download options -->
+            </section>
+        </div>
+    </main>
+
+    <!-- Link to the main application JavaScript file -->
+    <script type="module" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

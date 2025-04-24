@@ -1,0 +1,3 @@
+Flask==2.3.3
+MoviePy==2.1.2
+google-genai

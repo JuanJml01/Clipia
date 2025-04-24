@@ -1,0 +1,212 @@
+/* Catppuccin (Macchiato variant) Color Palette - Placeholder values */
+/* Replace with actual Catppuccin Macchiato hex codes */
+:root {
+    --ctp-rosewater: #f5e0dc; /* Example */
+    --ctp-flamingo: #f2cdcd; /* Example */
+    --ctp-pink: #f5c2e7;     /* Example */
+    --ctp-mauve: #cba6f7;    /* Example */
+    --ctp-red: #f38ba8;      /* Example */
+    --ctp-maroon: #eba0ac;   /* Example */
+    --ctp-peach: #fab387;    /* Example */
+    --ctp-yellow: #f9e2af;   /* Example */
+    --ctp-green: #a6e3a1;    /* Example */
+    --ctp-teal: #94e2d5;     /* Example */
+    --ctp-sky: #89dceb;      /* Example */
+    --ctp-sapphire: #74c7ec; /* Example */
+    --ctp-blue: #89b4fa;     /* Example */
+    --ctp-lavender: #b4befe; /* Example */
+    --ctp-text: #cdd6f4;     /* Example */
+    --ctp-subtext1: #bac2de; /* Example */
+    --ctp-subtext0: #a6adc8; /* Example */
+    --ctp-overlay0: #6c7086; /* Example */
+    --ctp-surface2: #585b70; /* Example */
+    --ctp-surface1: #45475a; /* Example */
+    --ctp-surface0: #313244; /* Example */
+    --ctp-base: #1e1e2e;     /* Example */
+    --ctp-mantle: #181825;   /* Example */
+    --ctp-crust: #11111b;    /* Example */
+
+    /* Background and text colors */
+    --background-color: var(--ctp-base);
+    --text-color: var(--ctp-text);
+    --accent-color: var(--ctp-mauve); /* Using mauve as an example accent */
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+.header {
+    background-color: var(--ctp-mantle);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--ctp-surface0);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Navigation Styling */
+.navigation {
+    background-color: var(--ctp-crust);
+    border-bottom: 1px solid var(--ctp-surface0);
+}
+
+.navigation .container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-tab {
+    flex-grow: 1;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--ctp-subtext1);
+}
+
+.nav-tab:hover {
+    background-color: var(--ctp-surface0);
+}
+
+.nav-tab.active {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Content Area */
+.content {
+    padding: 20px 0;
+}
+
+/* Tab Content Styling */
+.tab-content {
+    display: none; /* Hidden by default */
+}
+
+.tab-content.active {
+    display: block; /* Shown when active */
+}
+
+/* Upload Tab Styling */
+#upload-tab-content h2 {
+    color: var(--ctp-flamingo); /* Example accent for section title */
+    border-bottom: 1px solid var(--ctp-surface1);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.file-input-section {
+    border: 2px dashed var(--ctp-surface2);
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.file-input-section:hover {
+    border-color: var(--accent-color);
+}
+
+.file-input-section input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+.file-input-section label {
+    cursor: pointer;
+    color: var(--ctp-sky); /* Example accent for label */
+    font-size: 1.2em;
+}
+
+.video-preview {
+    margin-top: 20px;
+    border: 1px solid var(--ctp-surface1);
+    padding: 15px;
+    background-color: var(--ctp-surface0);
+    display: none; /* Hidden by default */
+}
+
+.video-preview.active {
+    display: block;
+}
+
+.video-preview video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.video-metadata p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: var(--ctp-subtext0);
+}
+
+.upload-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: var(--ctp-green); /* Example accent for button */
+    color: var(--ctp-base);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: var(--ctp-teal); /* Example hover color */
+}
+
+.upload-button:disabled {
+    background-color: var(--ctp-surface1);
+    cursor: not-allowed;
+}
+
+/* Loading state (example) */
+.upload-button.loading {
+    background-color: var(--ctp-yellow); /* Example loading color */
+}
+
+/* Basic Responsiveness */
+@media (max-width: 768px) {
+    .header .container,
+    .navigation .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-tab {
+        width: 100%;
+        border-bottom: none;
+        border-top: 1px solid var(--ctp-surface0);
+    }
+
+    .nav-tab.active {
+        border-bottom: none;
+        border-top: 2px solid var(--accent-color);
+    }
+}
